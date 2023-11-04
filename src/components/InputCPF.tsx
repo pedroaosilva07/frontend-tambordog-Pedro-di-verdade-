@@ -1,11 +1,12 @@
+import { InputAdornment, TextField } from "@mui/material";
 import React from "react";
 
-import InputMask from "react-input-mask";
 
-export default function InputCPF(props: any) {
+
+export default function InputCPF() {
   return (
     <>
-      <InputMask {...props} mask="999.999.999-99" maskChar=" " />
+      <TextField label="CPF" fullWidth />
     </>
   );
 }

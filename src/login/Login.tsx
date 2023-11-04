@@ -39,7 +39,7 @@ export default function Login() {
               </Grid>
 
               <Grid item xs={12} sx={{ mt: 3 }}>
-                <InputCPF label="CPF" fullWidth />
+                <InputCPF />
               </Grid>
 
               <Grid item xs={12} sx={{ mt: 3 }}>
