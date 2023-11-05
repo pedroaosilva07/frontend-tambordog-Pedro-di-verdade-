@@ -28,8 +28,8 @@ export default function CadastroDeAtleta() {
                             <Grid item xs={5} sx={{ textAlign: "center" }}>
                             </Grid>
                             <Grid item xs={5} sx={{ textAlign: "center" }}>
-                                <Stack direction="row" spacing={6}>
-                                    <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+                                <Stack direction="row" spacing={12}>
+                                    <Avatar sx={{ bgcolor: deepOrange[500], width: 56, height: 56, textAlign: 'center' }}>N</Avatar>
                                 </Stack>
                             </Grid>
 
