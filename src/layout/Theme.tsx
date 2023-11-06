@@ -12,7 +12,7 @@ declare module "@mui/material/styles" {
 }
 
 export const theme = createTheme({
-  corBotao: "#ffd700 ",
+  corBotao: "#ffa500",
   components: {
     MuiLink: {
       defaultProps: {

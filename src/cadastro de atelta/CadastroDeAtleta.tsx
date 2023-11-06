@@ -3,9 +3,13 @@ import react from 'react';
 import { deepOrange, deepPurple } from '@mui/material/colors';
 import Stack from '@mui/material/Stack';
 import React from 'react';
+import { theme } from '../layout/Theme';
+import BotaoComLoading from '../components/BotaoComLoading';
 
 
 export default function CadastroDeAtleta() {
+
+    const Theme = theme
 
     const [age, setAge] = React.useState('');
 
@@ -25,11 +29,9 @@ export default function CadastroDeAtleta() {
                 <Grid item xs={12} sm={8} md={5} lg={4}>
                     <Paper sx={{ padding: 3, margin: 3 }}>
                         <Grid container>
-                            <Grid item xs={5} sx={{ textAlign: "center" }}>
-                            </Grid>
-                            <Grid item xs={5} sx={{ textAlign: "center" }}>
-                                <Stack direction="row" spacing={12}>
-                                    <Avatar sx={{ bgcolor: deepOrange[500], width: 56, height: 56, textAlign: 'center' }}>N</Avatar>
+                            <Grid item xs={12} sx={{ textAlign: "center" }}>
+                                <Stack direction="row" spacing={12} justifyContent="center" >
+                                    <Avatar sx={{ bgcolor: deepOrange[500], width: 75, height: 75, textAlign: 'center' }}>N</Avatar>
                                 </Stack>
                             </Grid>
 
@@ -71,9 +73,7 @@ export default function CadastroDeAtleta() {
                             </Grid>
 
                             <Grid item xs={12} sx={{ mt: 3 }}>
-                                <Button fullWidth variant="contained">
-                                    Comfirmar
-                                </Button>
+                                <BotaoComLoading label='Comfirmar'/>
                             </Grid>
                         </Grid>
                     </Paper>

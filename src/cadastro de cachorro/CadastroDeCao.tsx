@@ -1,13 +1,17 @@
-import { Button, FormControlLabel, Grid, Link, Paper, TextField, Avatar, Checkbox, FormControl, InputLabel, NativeSelect, Select, MenuItem, SelectChangeEvent, FormLabel, RadioGroup, Radio, } from '@mui/material';
+import { Button, FormControlLabel, Grid, Link, Paper, TextField, Avatar, Checkbox, FormControl, InputLabel, NativeSelect, Select, MenuItem, SelectChangeEvent, FormLabel, RadioGroup, Radio, Modal, Box, Typography, CircularProgress, Fab, } from '@mui/material';
 import react from 'react';
-import { deepOrange, deepPurple } from '@mui/material/colors';
+import { deepOrange, deepPurple, green } from '@mui/material/colors';
 import Stack from '@mui/material/Stack';
 import React from 'react';
 import styled from '@emotion/styled';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { theme } from '../layout/Theme';
+import BotaoComLoading from '../components/BotaoComLoading';
 
 
 export default function CadastroDeCao() {
+
+    const Theme = theme
 
     const [age, setAge] = React.useState('');
 
@@ -27,8 +31,6 @@ export default function CadastroDeCao() {
         width: 1,
     });
 
-
-
     return (
         <>
             <Grid
@@ -40,16 +42,14 @@ export default function CadastroDeCao() {
                 <Grid item xs={12} sm={8} md={5} lg={4}>
                     <Paper sx={{ padding: 3, margin: 3 }}>
                         <Grid container>
-                            <Grid item xs={5} sx={{ textAlign: "center" }}>
-                            </Grid>
-                            <Grid item xs={5} sx={{ textAlign: "center" }}>
-                                <Stack direction="row" spacing={12}>
-                                    <Avatar sx={{ bgcolor: deepOrange[500], width: 56, height: 56, textAlign: 'center' }}>T</Avatar>
+                            <Grid item xs={12} sx={{ textAlign: "center" }}>
+                                <Stack direction="row" spacing={12} justifyContent="center" >
+                                    <Avatar sx={{ bgcolor: deepOrange[500], width: 80, height: 80, textAlign: 'center' }}>T</Avatar>
                                 </Stack>
                             </Grid>
 
                             <Grid item xs={12} sx={{ mt: 3 }}>
-                                <TextField label='Nome' fullWidth />
+                                <TextField label='Nome' fullWidth sx={{ color: theme.corBotao }} />
                             </Grid>
 
                             <Grid item xs={12} sx={{ mt: 6 }}>
@@ -60,10 +60,10 @@ export default function CadastroDeCao() {
                                         defaultValue="female"
                                         name="radio-buttons-group"
                                     >
-                                        <FormControlLabel value="(P) MINI < 35 cm" control={<Radio />} label="(P) MINI < 35 cm" />
-                                        <FormControlLabel value="(M) MIDI 35 a < 43 cm" control={<Radio />} label="(M) MIDI 35 a < 43 cm" />
-                                        <FormControlLabel value="(G) STANDART > 43 cm" control={<Radio />} label="(G) STANDART > 43 cm" />
-                                        <FormControlLabel value="(BC) Border Colile" control={<Radio />} label="(BC) Border Colile" />
+                                        <FormControlLabel value="(P) MINI < 35 cm" control={<Radio sx={{ color: theme.corBotao }} />} label="(P) MINI < 35 cm" />
+                                        <FormControlLabel value="(M) MIDI 35 a < 43 cm" control={<Radio sx={{ color: theme.corBotao }} />} label="(M) MIDI 35 a < 43 cm" />
+                                        <FormControlLabel value="(G) STANDART > 43 cm" control={<Radio sx={{ color: theme.corBotao }} />} label="(G) STANDART > 43 cm" />
+                                        <FormControlLabel value="(BC) Border Colile" control={<Radio sx={{ color: theme.corBotao }} />} label="(BC) Border Colile" />
                                     </RadioGroup>
                                 </FormControl>
                             </Grid>
@@ -77,6 +77,7 @@ export default function CadastroDeCao() {
                                         value={age}
                                         label="Pedigree"
                                         onChange={handleChange}
+                                        sx={{ color: theme.corBotao }}
                                     >
                                         <MenuItem value={10}>Escola</MenuItem>
                                         <MenuItem value={20}>Individual</MenuItem>
@@ -94,6 +95,7 @@ export default function CadastroDeCao() {
                                         value={age}
                                         label="Raça"
                                         onChange={handleChange}
+                                        sx={{ color: theme.corBotao }}
                                     >
                                         <MenuItem value={10}>Escola</MenuItem>
                                         <MenuItem value={20}>Individual</MenuItem>
@@ -103,7 +105,7 @@ export default function CadastroDeCao() {
                             </Grid>
 
                             <Grid item xs={7} sx={{ mt: 3 }}>
-                                <TextField label='Data de Nascimento' fullWidth type='date' />
+                                <TextField label='Data de Nascimento' fullWidth type='date' sx={{ color: theme.corBotao }} />
                             </Grid>
 
                             <Grid item xs={1} sx={{ mt: 3 }}>
@@ -117,23 +119,21 @@ export default function CadastroDeCao() {
                                         defaultValue="female"
                                         name="radio-buttons-group"
                                     >
-                                        <FormControlLabel value="Femea" control={<Radio />} label="Femea" />
-                                        <FormControlLabel value="Macho" control={<Radio />} label="Macho" />
+                                        <FormControlLabel value="Femea" control={<Radio sx={{ color: theme.corBotao }} />} label="Femea" />
+                                        <FormControlLabel value="Macho" control={<Radio sx={{ color: theme.corBotao }} />} label="Macho" />
                                     </RadioGroup>
                                 </FormControl>
                             </Grid>
 
                             <Grid item xs={7} sx={{ mt: 1 }}>
-                                <Button component="label" variant="contained" endIcon={<CloudUploadIcon />}>
+                                <Button component="label" variant="contained" sx={{ background: theme.corBotao }} endIcon={<CloudUploadIcon />}>
                                     Vacinação
                                     <VisuallyHiddenInput type="file" />
                                 </Button>
                             </Grid>
 
                             <Grid item xs={12} sx={{ mt: 3 }}>
-                                <Button fullWidth variant="contained">
-                                    Comfirmar
-                                </Button>
+                                <BotaoComLoading label='Comfirmar' />
                             </Grid>
                         </Grid>
                     </Paper>
