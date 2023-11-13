@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import React from 'react';
 import { theme } from '../layout/Theme';
 import BotaoComLoading from '../components/BotaoComLoading';
+import BottomNavComplet from '../components/BottonNavComplet';
 
 
 export default function CadastroDeAtleta() {
@@ -73,10 +74,13 @@ export default function CadastroDeAtleta() {
                             </Grid>
 
                             <Grid item xs={12} sx={{ mt: 3 }}>
-                                <BotaoComLoading label='Comfirmar'/>
+                                <BotaoComLoading label='Comfirmar' />
                             </Grid>
                         </Grid>
                     </Paper>
+                    <Grid item xs={12}>
+                        <BottomNavComplet />
+                    </Grid>
                 </Grid>
             </Grid>
         </>

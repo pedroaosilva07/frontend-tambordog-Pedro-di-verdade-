@@ -7,6 +7,7 @@ import styled from '@emotion/styled';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { theme } from '../layout/Theme';
 import BotaoComLoading from '../components/BotaoComLoading';
+import BottomNavComplet from '../components/BottonNavComplet';
 
 
 export default function CadastroDeCao() {
@@ -137,6 +138,9 @@ export default function CadastroDeCao() {
                             </Grid>
                         </Grid>
                     </Paper>
+                    <Grid item xs={12}>
+                        <BottomNavComplet />
+                    </Grid>
                 </Grid>
             </Grid>
         </>

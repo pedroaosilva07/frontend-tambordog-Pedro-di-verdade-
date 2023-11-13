@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Avatar, AvatarGroup, Grid } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import BottomNavComplet from "../components/BottonNavComplet";
 
 interface propsCardEvento {
   titulo: string;

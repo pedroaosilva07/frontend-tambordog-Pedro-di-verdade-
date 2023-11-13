@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 import {
   Button,
@@ -9,20 +9,40 @@ import {
   Link,
   Paper,
   TextField,
-} from "@mui/material";
+} from "@mui/material"
 
-import { useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles"
 
+<<<<<<< HEAD
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import Condicional from "../components/Condicional";
 import InputCPF from "../components/InputCPF";
 import BotaoComLoading from "../components/BotaoComLoading";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const theme = useTheme();
 
-  const [exibirSenha, setExibirSenha] = useState("password");
+
+  const theme = useTheme();
+=======
+import VisibilityIcon from "@mui/icons-material/Visibility"
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff"
+import Condicional from "../components/Condicional"
+import InputFormat from "../components/InputFormat"
+
+export default function Login() {
+  const theme = useTheme()
+>>>>>>> b214dd36c73ee6580c9c8d0f751ba41b8ac0a26b
+
+  const [exibirSenha, setExibirSenha] = useState("password")
+
+  const [x, setX] = useState()
+
+  const [dados, setDados] = useState({
+    cpf: "",
+    senha: "JÁ VENHA PREENCHIDA",
+  })
 
   return (
     <>
@@ -40,18 +60,31 @@ export default function Login() {
               </Grid>
 
               <Grid item xs={12} sx={{ mt: 3 }}>
+<<<<<<< HEAD
                 <InputCPF />
+=======
+                <InputFormat
+                  label="CPF"
+                  mask="000.000.000-00"
+                  setDados={setDados}
+                  dados={dados}
+                  campo="cpf"
+                />
+>>>>>>> b214dd36c73ee6580c9c8d0f751ba41b8ac0a26b
               </Grid>
 
               <Grid item xs={12} sx={{ mt: 3 }}>
                 <TextField
+                  onChange={(evento) =>
+                    setDados({ ...dados, senha: evento.target.value })
+                  }
+                  value={dados.senha}
                   label="Senha"
                   type={exibirSenha}
                   fullWidth
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="start">
-
                         <Condicional condicao={exibirSenha === "text"}>
                           <VisibilityIcon sx={{ color: theme.corBotao }}
                             onClick={() => setExibirSenha("password")}
@@ -63,7 +96,6 @@ export default function Login() {
                             onClick={() => setExibirSenha("text")}
                           />
                         </Condicional>
-
                       </InputAdornment>
                     ),
                   }}
@@ -82,16 +114,22 @@ export default function Login() {
               </Grid>
 
               <Grid item xs={12} sx={{ mt: 3 }}>
-                <BotaoComLoading label="Cadastrar"  />
+                <nav>
+                  <BotaoComLoading label="Cadastrar" />
+                </nav>
               </Grid>
 
               <Grid item xs={12} sx={{ textAlign: "center", mt: 3 }}>
                 <Link sx={{ color: theme.corBotao }}>Registrar-se</Link>
+              </Grid>
+              <Grid item xs={12} sx={{ textAlign: "center", mt: 3 }}>
+                Dados:
+                {JSON.stringify(dados)}
               </Grid>
             </Grid>
           </Paper>
         </Grid>
       </Grid>
     </>
-  );
+  )
 }

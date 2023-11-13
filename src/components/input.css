@@ -1,0 +1,45 @@
+/* Adicione estilos Material-UI aos campos de entrada */
+.input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border 0.2s;
+  }
+  
+  /* Estilos quando o campo está focado */
+  .input:focus {
+    border: 1px solid #1976D2;
+    outline: none;
+  }
+  
+  /* Estilize o texto dentro do campo de entrada */
+  .input::placeholder {
+    font-size: 16px;
+  }
+  
+  /* Estilize o CPF formatado */
+  .input-formatted {
+    font-size: 16px;
+  }
+  
+  /* Remova o estilo padrão do campo de entrada */
+  .input[type="text"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  /* Adicione sombra no campo de entrada em foco */
+  .input.focus {
+    box-shadow: 0 0 3px rgba(25, 118, 210, 0.5);
+  }
+  
+  /* Estilize o texto de erro */
+  .error-text {
+    color: red;
+    font-size: 12px;
+  }
+  
